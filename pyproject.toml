@@ -1,0 +1,25 @@
+[project]
+name = "eleicoes2026"
+version = "0.1.0"
+description = "Análise de votos do 1º turno das eleições gerais brasileiras de 2026 (dados abertos do TSE)"
+requires-python = ">=3.10"
+dependencies = [
+    "pandas>=2.0",
+    "requests>=2.31",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+eleicoes2026 = "eleicoes2026.cli:main"
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
